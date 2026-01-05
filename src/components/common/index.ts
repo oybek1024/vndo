@@ -1,0 +1,2 @@
+export { VNDOLogo } from "./VNDOLogo";
+

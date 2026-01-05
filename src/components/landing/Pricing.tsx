@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
-import { Icon } from "@iconify/react";
-import { Button, Card } from "antd";
-import { useNavigate } from "react-router";
+import {motion, type Variants} from "framer-motion";
+import {Icon} from "@iconify/react";
+import {Button, Card} from "antd";
+import {useNavigate} from "react-router";
 
 const consumerTiers = [
   {
@@ -69,7 +69,7 @@ const supplierInfo = {
 export const Pricing = () => {
   const navigate = useNavigate();
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -79,7 +79,7 @@ export const Pricing = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
@@ -105,7 +105,7 @@ export const Pricing = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Simple, Transparent
             <br />
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Pricing Plans
             </span>
           </h2>
@@ -134,7 +134,8 @@ export const Pricing = () => {
               >
                 {tier.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    <span
+                        className="bg-linear-to-r from-purple-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
                       Most Popular
                     </span>
                   </div>
@@ -157,7 +158,7 @@ export const Pricing = () => {
                     <li key={idx} className="flex items-start gap-2">
                       <Icon
                         icon="solar:check-circle-bold"
-                        className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"
+                        className="w-5 h-5 text-green-500 mt-0.5 shrink-0"
                       />
                       <span className="text-gray-700">{feature}</span>
                     </li>
@@ -170,7 +171,7 @@ export const Pricing = () => {
                   onClick={() => navigate("/auth/signup")}
                   className={`h-12 font-semibold ${
                     tier.popular
-                      ? "bg-gradient-to-r from-purple-500 to-pink-500 border-0"
+                        ? "bg-linear-to-r from-purple-500 to-pink-500 border-0"
                       : ""
                   }`}
                 >
@@ -187,7 +188,7 @@ export const Pricing = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white"
+          className="bg-linear-to-br from-indigo-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white"
         >
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
@@ -228,7 +229,7 @@ export const Pricing = () => {
                     <li key={idx} className="flex items-start gap-2">
                       <Icon
                         icon="solar:check-circle-bold"
-                        className="w-5 h-5 text-green-300 mt-0.5 flex-shrink-0"
+                        className="w-5 h-5 text-green-300 mt-0.5 shrink-0"
                       />
                       <span>{detail}</span>
                     </li>

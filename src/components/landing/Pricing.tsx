@@ -69,6 +69,8 @@ const supplierInfo = {
 export const Pricing = () => {
   const navigate = useNavigate();
 
+  // comment
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
